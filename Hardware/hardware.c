@@ -3,6 +3,7 @@
 #include "ESP01S.h"
 #include "dht11.h"
 #include "Buzzer.h"
+#include "Relay.h"
 
 void Hardware_Init(void)
 {
@@ -10,4 +11,5 @@ void Hardware_Init(void)
     ESP01S_Init();
     DHT11_Init();
     Buzzer_Init();
+    Relay_Init();
 }
