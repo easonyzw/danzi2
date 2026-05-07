@@ -4,6 +4,7 @@
 #include "dht11.h"
 #include "Buzzer.h"
 #include "Relay.h"
+#include "gps.h"
 
 void Hardware_Init(void)
 {
@@ -12,4 +13,6 @@ void Hardware_Init(void)
     DHT11_Init();
     Buzzer_Init();
     Relay_Init();
+
+    GPS_Init();      // 默认 9600 波特率
 }
