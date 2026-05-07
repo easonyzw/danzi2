@@ -704,6 +704,11 @@
               <FileType>1</FileType>
               <FilePath>.\Hardware\dht11.c</FilePath>
             </File>
+            <File>
+              <FileName>gps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\gps.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
