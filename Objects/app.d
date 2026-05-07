@@ -33,3 +33,5 @@
 .\objects\app.o: .\Hardware\ESP01S.h
 .\objects\app.o: .\System\Timer.h
 .\objects\app.o: .\Hardware\DHT11.h
+.\objects\app.o: .\Hardware\gps.h
+.\objects\app.o: APP\ui.h

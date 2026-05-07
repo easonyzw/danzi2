@@ -34,3 +34,5 @@
 .\objects\hardware.o: Hardware\dht11.h
 .\objects\hardware.o: Hardware\Buzzer.h
 .\objects\hardware.o: Hardware\Relay.h
+.\objects\hardware.o: Hardware\gps.h
+.\objects\hardware.o: Hardware\OLED.h

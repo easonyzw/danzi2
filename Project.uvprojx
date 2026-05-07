@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\Library;.\User;.\System;.\Hardware;.\APP;.\Hardware;.\System;.\Hardware</IncludePath>
+              <IncludePath>.\Start;.\Library;.\User;.\System;.\Hardware;.\APP;.\Hardware;.\System;.\Hardware;.\APP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -758,6 +758,11 @@
               <FileName>data.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\APP\data.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\ui.c</FilePath>
             </File>
           </Files>
         </Group>
