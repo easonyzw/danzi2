@@ -3,6 +3,7 @@
 #include "ESP01S.h"
 #include "Timer.h"
 #include "DHT11.h"
+#include "gps.h"
 
 static uint32_t last_dht_time = 0;
 static uint32_t last_esp_time = 0;
@@ -17,8 +18,13 @@ void App_Task(void)
     uint32_t now = Timer_GetMs();
 
     /*
-     * Ã¿ 2 Ãë¶ÁÈ¡Ò»´Î DHT11
-     * DHT11 ²»½¨Òé¶ÁÈ¡Ì«Æµ·±
+     * GPS ä¸²å£æ•°æ®æ˜¯ä¸­æ–­æŽ¥æ”¶çš„ã€‚
+     * è¿™é‡Œå¾ªçŽ¯è°ƒç”¨ GPS_Task()ï¼Œæœ‰æ–°æ•°æ®æ—¶ä¼šè‡ªåŠ¨è§£æžã€‚
+     */
+    GPS_Task();
+
+    /*
+     * æ¯ 2 ç§’è¯»å–ä¸€æ¬¡ DHT11
      */
     if (now - last_dht_time >= 2000)
     {
@@ -27,25 +33,29 @@ void App_Task(void)
         if (DHT11_ReadData(&g_sensor.temperature, &g_sensor.humidity) == DHT11_OK)
         {
             /*
-             * ¶ÁÈ¡³É¹¦£¬g_sensor.temperature ºÍ g_sensor.humidity ÒÑ¾­¸üÐÂ
+             * è¯»å–æˆåŠŸ
              */
         }
         else
         {
             /*
-             * ¶ÁÈ¡Ê§°Ü£¬±£³ÖÉÏÒ»´ÎÊý¾Ý²»±ä
+             * è¯»å–å¤±è´¥ï¼Œä¿æŒä¸Šä¸€æ¬¡æ•°æ®
              */
         }
     }
 
     /*
-     * Ã¿ 5 Ãë·¢ËÍÒ»´ÎÎÂÊª¶È¸ø ESP
+     * æ¯ 5 ç§’å‘é€ä¸€æ¬¡æ¸©æ¹¿åº¦ + GPS åæ ‡ç»™ ESP
      */
     if (now - last_esp_time >= 5000)
     {
         last_esp_time = now;
 
         ESP01S_SendData(g_sensor.temperature,
-                        g_sensor.humidity);
+                        g_sensor.humidity,
+                        GPS_Data.latitude_x1000000,
+                        GPS_Data.longitude_x1000000,
+                        GPS_Data.altitude_x100,
+                        GPS_Data.valid);
     }
 }
