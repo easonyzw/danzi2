@@ -8,12 +8,14 @@
 #include "OLED.h"
 #include "Key.h"
 #include "MQ2.h"
+
 void Hardware_Init(void)
 {
     Timer_Init();
     ESP01S_Init();
     DHT11_Init();
     Buzzer_Init();
+    MQ2_Init();
     Relay_Init();
     OLED_Init();
     Key_Init();
