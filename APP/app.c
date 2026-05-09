@@ -13,14 +13,6 @@
 /* 吸合/蜂鸣保持时间：5秒 */
 #define ALARM_ON_TIME_MS        5000
 
-/* 页面编号 */
-#define APP_PAGE_MAIN           0       // 主界面
-#define APP_PAGE_SETTING        1       // 阈值设置界面
-
-/* 设置项编号 */
-#define APP_SETTING_TEMP        0       // 当前选择温度阈值
-#define APP_SETTING_HUMI        1       // 当前选择湿度阈值
-
 /* 阈值范围限制 */
 #define TEMP_THRESHOLD_MIN      0
 #define TEMP_THRESHOLD_MAX      99
