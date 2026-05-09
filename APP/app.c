@@ -10,7 +10,7 @@
 #include "MQ2.h"
 
 /* 温湿度报警阈值 */
-#define TEMP_THRESHOLD    28
+#define TEMP_THRESHOLD    30
 #define HUMI_THRESHOLD    60
 
 static uint32_t last_dht_time = 0;
