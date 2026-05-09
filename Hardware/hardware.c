@@ -6,7 +6,7 @@
 #include "Relay.h"
 #include "gps.h"
 #include "OLED.h"
-
+#include "Key.h"
 void Hardware_Init(void)
 {
     Timer_Init();
@@ -15,6 +15,6 @@ void Hardware_Init(void)
     Buzzer_Init();
     Relay_Init();
     OLED_Init();
-
+    Key_Init();
     GPS_Init();      // 默认 9600 波特率
 }
