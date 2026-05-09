@@ -5,6 +5,8 @@
 
 void UI_Init(void);
 void UI_Task(uint32_t now);
+
 void UI_ShowMainPage(void);
+void UI_ShowSettingPage(void);
 
 #endif
