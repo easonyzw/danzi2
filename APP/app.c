@@ -10,14 +10,14 @@
 
 /* 温湿度报警阈值 */
 #define TEMP_THRESHOLD    28
-#define HUMI_THRESHOLD    70
+#define HUMI_THRESHOLD    60
 
 static uint32_t last_dht_time = 0;
 static uint32_t last_esp_time = 0;
 
 /*
  * 温湿度报警控制
- * 温度超过 28℃ 或 湿度超过 70%：
+ * 温度超过 28℃ 或 湿度超过 60%：
  * Relay1 PA5  输出高电平
  * Relay2 PA15 输出高电平
  * Buzzer PA4  输出高电平
