@@ -7,6 +7,7 @@
 #include "gps.h"
 #include "OLED.h"
 #include "Key.h"
+#include "MQ2.h"
 void Hardware_Init(void)
 {
     Timer_Init();
